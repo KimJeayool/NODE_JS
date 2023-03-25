@@ -2,6 +2,10 @@ const http = require('http');
 
 // 서버 실행 !! 
 const server = http.createServer((req, res) => {
+    // 한글 인식
+    res.writeHead(200, {'Content-Type':'text/html; charset=utf-8'});
+
+    // 본문 내용
     res.write('<h1>Hello Node!</h1>');
     res.write('<p>Hello server</p>');
     res.end('<p>Hello ChestNut</p>');
@@ -24,3 +28,4 @@ server.on('error', (error) => {
 });
 
 
+// 실행 > node server1
